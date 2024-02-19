@@ -1,17 +1,13 @@
-const containsDuplicate = (nums) => {
-  const temp = {};
-  for (const num of nums) {
-    if (temp[nums[num]] !== undefined) {
-      return true;
-    } else {
-      temp[nums[num]] = num;
-    }
+function containsDuplicate(nums) {
+  const set = new Set();
+
+  for (let i = 0; i < nums.length; i++) {
+    if (set.has(nums[i])) return true;
+    else set.add(nums[i]);
   }
+
   return false;
-};
-
-const nums = [1, 2, 4, 1];
-
+}
 console.log(containsDuplicate(nums));
 
 /****
@@ -22,19 +18,18 @@ console.log(containsDuplicate(nums));
 
 // solution 2
 
-//   function containsDuplicate(nums) {
-//     const numOccurrences = {};
-
-//     for (const num of nums) {
-//         if (numOccurrences[num]) {
-//             // If the number already exists in the object, it's a duplicate
-//             return true;
-//         } else {
-//             // Otherwise, mark the number as seen
-//             numOccurrences[num] = true;
-//         }
+// const containsDuplicate = (nums) => {
+//   const temp = {};
+//   for (const num of nums) {
+//     if (temp[nums[num]] !== undefined) {
+//       return true;
+//     } else {
+//       temp[nums[num]] = num;
 //     }
+//   }
+//   return false;
+// };
 
-//     // If the loop completes without returning, there are no duplicates
-//     return false;
-// }
+// const nums = [1, 2, 4, 1];
+
+// console.log(containsDuplicate(nums));

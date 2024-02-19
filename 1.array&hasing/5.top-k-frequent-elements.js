@@ -42,8 +42,13 @@ const topKFrequent = (nums, k) => {
 };
 
 const nums = [1, 1, 1, 5, 5, 7, 7, 7, 3];
-const k = 4;
+const k = 2;
 console.log(topKFrequent(nums, k));
+
+// bucket sort er moddhe frequency onujayi index value map hobe, { 1: 3, 5:2, 7:3, 3:1 } eta store hobe eivabe == [..,['3'],['5'],['1','7']]
+// ['1','7'] save hobe 3 index e karon eder freq 3 ... ['5'] save hobe 2 index e karon etar frequency 2 .. same goes to 3
+
+// bucket array er last theke traverse kora shuru hobe karon boro frequency last er dike thakbe
 
 // use bucket sort because it's not possible get the max 2 number from the object directly. you have sort the object any how. that's why we sorted the object and make it array using bucket sort
 

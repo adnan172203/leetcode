@@ -28,3 +28,5 @@ const height = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1];
 console.log(trap(height));
 
 // const height = [3, 1, 2, 4, 0, 1, 3, 2];
+
+// height[left], +1 kore egiye jabe kintu leftmax left er shob theke boro ta thakbe r height[left] ke minus korbe

@@ -12,27 +12,27 @@ const threeSum = (nums) => {
 
     if (i > 0 && nums[i] === nums[i - 1]) continue;
 
-    let j = i + 1;
+    let left = i + 1;
 
-    let k = nums.length - 1;
+    let right = nums.length - 1;
 
-    while (j < k) {
-      let sum = nums[i] + nums[j] + nums[k];
+    while (left < right) {
+      let sum = nums[i] + nums[left] + nums[right];
 
       if (sum === target) {
-        results.push([nums[i], nums[j], nums[k]]);
+        results.push([nums[i], nums[left], nums[right]]);
 
         // those while loop and increment/decrement help us to skip duplicate value
-        while (nums[j] === nums[j + 1]) j++;
-        while (nums[k] === nums[k - 1]) k--;
+        while (nums[left] === nums[left + 1]) left++;
+        while (nums[right] === nums[right - 1]) right--;
 
         // these increments/decrements actually move the pointers
-        j++;
-        k--;
+        left++;
+        right--;
       } else if (sum < target) {
-        j++;
+        left++;
       } else {
-        k--;
+        right--;
       }
     }
   }

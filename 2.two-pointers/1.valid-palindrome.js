@@ -9,3 +9,15 @@ const isPalindrome = (str) => {
 console.log(isPalindrome('A man, a plan, a canal: Panama')); // true
 console.log(isPalindrome('race a car')); // false
 console.log(isPalindrome(' ')); // true
+
+// var isPalindrome = function(s) {
+//   let newStr = s.toLowerCase().replace(/[^0-9a-z]/g, "");
+//   let left = 0, right = newStr.length-1;
+
+//   while(left < right){
+//       if(newStr[left] !== newStr[right]) return false
+//       left++
+//       right--
+//   }
+//   return true
+// };

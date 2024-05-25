@@ -45,8 +45,6 @@ console.log(characterReplacement(s, 1));
 
 // The variable right is the index of the right endpoint of the current window, and left is the index of the left endpoint of the current window. The expression right - left + 1 calculates the length of the current window.
 
-// The variable topFrequency is the frequency count of the most frequent character in the current window. This value is updated whenever a new character is added to the map object (see the previous line of code).
-
-// The expression (right - left + 1 - topFrequency) calculates the number of characters in the current window that are not the most frequent character. If this value is greater than k, it means that we need to adjust the window to include more occurrences of the most frequent character.
-
 //sliding window te (right - left + 1 - topFrequency) etar result jodi "k" theke beshi hoy tahole window adjust korte hobe karon, mone kori "ABBBBC" , ekhane k = 1 kintu   (right - left + 1 - topFrequency) etar result jodi k theke beshi hoy tahole 2 ta change korte parbo na karon k er value 1. tokhon window ta left theke samne agabe notun window hobe "BBBBC" ebong  "C" ke B diye replace kora jabe karon k=1. result hobe 5.
+
+// (right - left + 1 - topFrequency) == mone kori ekhane ('ABBBBCC') amar sliding window te character ache 5 ta ('ABBBB'), ekhane top frequency hobe 4, karon 4 ta 'B' ache. tarmane b chara 1 ta character change korte parbo jehetu k = 1. current window theke topfrequency bad dile baki character gula ke change korte hobe.

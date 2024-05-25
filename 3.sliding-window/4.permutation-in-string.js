@@ -17,9 +17,9 @@ const checkInclusion = function (s1, s2) {
 		b:1
 	}
 	*/
-  let left = 0, //left pointer/index of the sliding window
-    right = 0, //right pointer/index of the sliding window
-    requiredLength = s1.length; //length of the substring required in s2
+  let left = 0;
+  let right = 0;
+  let requiredLength = s1.length; //length of the substring required in s2
 
   // Now iterate until the right index of window is lesser than length of s2
   while (right < s2.length) {
@@ -52,6 +52,35 @@ const checkInclusion = function (s1, s2) {
 };
 
 const s1 = 'ab';
-const s2 = 'eidbaooo';
+const s2 = 'aeidbaooo';
 
 console.log(checkInclusion(s1, s2));
+
+// Suppose we have:
+
+// s1: "ab"
+// s2: "eidbaooo"
+// The code snippet in question is responsible for maintaining a sliding window of size s1.length in s2.
+
+// javascript
+// Copy code
+// if (right - left === s1.length) {
+//     if (neededChar[s2[left]] >= 0) requiredLength++;
+//     neededChar[s2[left]]++;
+//     left++;
+// }
+// In this snippet:
+
+// right represents the right pointer of the sliding window.
+// left represents the left pointer of the sliding window.
+// requiredLength tracks how many characters of s1 are still needed in the current window.
+// Now, imagine we have moved our window to the point where s2[right] is "i" and s2[left] is "e". At this point, the window has reached the length of s1.
+
+// right - left === s1.length checks if the length of the window is equal to the length of s1.
+// If it is, we check neededChar[s2[left]] >= 0. This checks if the character at the left edge of the window (s2[left]) is actually present in s1 (meaning we need it). If it's not, it means this character is not relevant to our permutation, so we don't decrement requiredLength.
+// If it is relevant, we increment requiredLength, because we're shifting our window, so we need to keep track of the new character (s2[left]) entering the window.
+// We then increment the count of the character at s2[left] in neededChar because we're moving the window, so we need to account for the new character that has entered.
+// Finally, we move the left pointer of the window (left++) to shift the window by one character to the right.
+// This process continues until we reach the end of s2, checking and moving the window for each character.
+
+// In our example, this would happen when s2[right] is at "o" and s2[left] is at "i". The window is now "idb" and is moved to "dba", "bao", and finally "aoo" before the loop completes.

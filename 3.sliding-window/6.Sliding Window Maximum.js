@@ -1,33 +1,3 @@
-// function maxSlidingWindow(nums, k) {
-//   const res = [];
-//   let l = 0;
-//   let r = 0;
-
-//   const queue = [];
-
-//   while (r < nums.length) {
-//     let testQueue = nums[queue[queue.length - 1]]; // for testing , not related to code
-
-//     while (queue.length > 0 && nums[queue[queue.length - 1]] < nums[r]) {
-//       queue.pop();
-//     }
-//     queue.push(r);
-
-//     if (l > queue[0]) {
-//       queue.shift();
-//     }
-
-//     if (r + 1 >= k) {
-//       res.push(nums[queue[0]]);
-//       l += 1;
-//     }
-
-//     r += 1;
-//   }
-
-//   return res;
-// }
-
 const maxSlidingWindow = function (nums, k) {
   if (nums.length == 1) {
     return nums;
@@ -82,8 +52,14 @@ const k = 3;
 
 console.log(maxSlidingWindow(nums, k));
 
+//  [5, 4, 4, 2, 1] -- non-increasing order
+
 // if (queue[0] === nums[l]) {
 //   queue.shift();
 // }
 
 // this line ensures that if the maximum element in the current window (queue[0]) is the same as the element about to leave the window (nums[l]), it is removed from the queue because it won't be part of the next window. This keeps the queue updated with only relevant elements for the current window.
+
+// queue maintain kora hocche karon jokhon res.push(queue[0]) kora hobe tokhon jeno boro number ta push kora jai.
+
+//window size queue maintain korena, left pointer ebong right pointer diye maintain kora hoy.

@@ -4,6 +4,7 @@ function maxArea(height) {
   let right = height.length - 1;
 
   while (left < right) {
+    // <width>                     //height
     let area = (right - left) * Math.min(height[left], height[right]);
 
     max = Math.max(max, area);
@@ -21,3 +22,31 @@ function maxArea(height) {
 const height = [1, 8, 6, 2, 5, 4, 8, 3, 7];
 
 console.log(maxArea(height));
+
+// right - left gives the width of the container. right- left kora hoise karon while loop e left < right ei jonno right- left korle positive number ashbe
+
+// height = Math.min(height[left], height[right]) kora hoise karon container er height ber korte hobe, jar moddhe choto ta hobe sei height
+
+//
+//
+//
+
+// why use math.min?
+
+// The Math.min function is used to find the height of the container because the height is limited by the shorter line segment between the left and right pointers.
+
+// For example, if the height array was:
+
+// [1, 8, 6, 2, 5, 4, 8, 3, 7]
+
+// And left pointer was at index 0 with height 1, and right pointer was at index 1 with height 8.
+
+// The width would be right - left = 1 - 0 = 1
+
+// The height is limited by the shorter line segment, which is height[left] = 1.
+
+// So Math.min(height[left], height[right]) returns 1, which is the shorter height that limits how much water this container can hold.
+
+// If we didn't use Math.min, and just used height[left], then the height would be 8 and we would calculate a larger area than is possible for that container configuration.
+
+// So Math.min allows us to correctly calculate the area of each container by using the height limited by the shorter side. This ensures we don't overestimate the area for that container.

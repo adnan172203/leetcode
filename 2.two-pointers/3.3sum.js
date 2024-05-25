@@ -43,6 +43,24 @@ const threeSum = (nums) => {
 const nums = [-1, 0, 1, -1, 2, -1, -4];
 console.log(threeSum(nums));
 
+/**
+ * 
+ * 
+ *        
+        while (nums[left] === nums[left + 1]) left++; // mone kori amar array sort korar pore ei rokom hocche [-4,-1,-1,-1,0,1,2],
+        ekhon jokhon left++ korbo duplicate skip korar jonno tokhon ek dhap egiye pointer duplicate er upore jabe kintu skip hobena, jokhon niche abar left++ korbo tokhon duplicate skip hobe.
+
+        while (nums[right] === nums[right - 1]) right--; // etar khetreo same hobe , jokhon right-- korbo duplicate skip korar jonno, tokhon pointer duplicate er upore jabe kintu skip hobena, jokhon niche abar right-- korbo tokhon duplicate skip hobe.
+
+      
+        left++;
+        right--;
+ * 
+ * 
+ * 
+ * 
+ * **/
+
 // const threeSum = (nums) => {
 //   const results = [];
 

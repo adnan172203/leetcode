@@ -4,8 +4,9 @@ function maxArea(height) {
   let right = height.length - 1;
 
   while (left < right) {
-    // <width>                     //height
-    let area = (right - left) * Math.min(height[left], height[right]);
+    const width = right - left;
+    const currHeight = Math.min(height[left], height[right]);
+    const area = width * currHeight;
 
     max = Math.max(max, area);
 
@@ -50,3 +51,16 @@ console.log(maxArea(height));
 // If we didn't use Math.min, and just used height[left], then the height would be 8 and we would calculate a larger area than is possible for that container configuration.
 
 // So Math.min allows us to correctly calculate the area of each container by using the height limited by the shorter side. This ensures we don't overestimate the area for that container.
+
+// ***************** min water line height **************
+
+// The reason we need to find the minimum height between the two lines at the left and right pointers is because the amount of water that can be trapped between two lines is limited by the shorter of the two lines.
+
+// Here's why:
+
+// Imagine you're trying to fill the space between two vertical lines with water. The water level can't rise higher than the shorter line, because water will overflow from the shorter side.
+// If one line is much taller than the other, the taller line won't matter as much because the shorter line will be the limiting factor.
+// For example:
+
+// If height[left] = 1 and height[right] = 8, the water can only rise to a height of 1 (because the left side is shorter).
+// If height[left] = 6 and height[right] = 3, the water can only rise to a height of 3 (because the right side is shorter).

@@ -24,6 +24,8 @@ const height = [1, 8, 6, 2, 5, 4, 8, 3, 7];
 
 console.log(maxArea(height));
 
+// ** biger width with bigger height find out the max area.
+
 // video: https://www.youtube.com/watch?v=w7ftYsZtIbs
 
 // right - left gives the width of the container. right- left kora hoise karon while loop e left < right ei jonno right- left korle positive number ashbe

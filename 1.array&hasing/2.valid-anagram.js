@@ -78,3 +78,32 @@ console.log(isAnagram('rat', 'car')); // Output: false
 
 // 1 is truthy, so JavaScript doesn't need to evaluate the second value because it already has a truthy value (1).
 // So, the result is 1.
+
+// solution three
+
+// function isAnagram(s, t) {
+//   if (s.length !== t.length) {
+//     return false; // If lengths differ, they cannot be anagrams
+//   }
+
+//   const count = {};
+
+//   // Count the frequency of each character in s
+//   for (let char of s) {
+//     count[char] = (count[char] || 0) + 1;
+//   }
+
+//   // Subtract the frequency based on characters in t
+//   for (let char of t) {
+//     if (!count[char]) {
+//       return false; // If a character is not found or count goes negative
+//     }
+//     count[char] -= 1;
+//   }
+
+//   return true; // All counts matched
+// }
+
+// // Example Usage:
+// console.log(isAnagram('anagram', 'nagaram')); // Output: true
+// console.log(isAnagram('rat', 'car')); // Output: false

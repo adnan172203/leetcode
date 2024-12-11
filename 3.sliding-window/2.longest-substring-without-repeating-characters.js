@@ -16,3 +16,13 @@ const lengthOfLongestSubstring = (s) => {
 
 const s = 'abcabcbb';
 console.log(lengthOfLongestSubstring(s));
+
+// while (charSet.has(s[right])) {
+//   charSet.delete(s[left]);
+//   left += 1;
+// }
+
+// Inside the loop, we check if the character at the right index (s[right]) is already in the charSet.
+
+// If it is, it means we have a duplicate character. To remove the duplicate, we Remove the character at the left index from the charSet.
+// Move the left index one step to the right (increment left by 1).

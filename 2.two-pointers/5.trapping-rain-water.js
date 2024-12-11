@@ -63,4 +63,24 @@ console.log(trap(height)); // Output: 6
 
 // const height = [3, 1, 2, 4, 0, 1, 3, 2];
 
-// height[left], +1 kore egiye jabe kintu leftmax left er shob theke boro ta thakbe r height[left] ke minus korbe
+//step 1:
+
+//  initialize two variables, leftMax and rightMax, to keep track of the maximum height of the bars on the left and right sides, respectively.
+
+// step 2:
+
+// We enter a loop that continues until the left and right pointers meet.
+
+// If the height of the bar at the left index is less than the height of the bar at the right index, we move the left pointer to the right.
+
+// Otherwise, we move the right pointer to the left.
+
+// step 3:
+
+// If the height of the bar at the left index is greater than or equal to the current leftMax, we update leftMax to be the new height.
+
+// Otherwise, we calculate the amount of water that can be trapped between the current bar and the leftMax bar, and add it to waterTrapped.
+
+// We do the same for the right index.
+
+// **height[left], +1 kore egiye jabe kintu leftmax left er shob theke boro ta thakbe r height[left] ke minus korbe

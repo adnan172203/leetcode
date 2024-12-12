@@ -5,8 +5,8 @@ const maxSlidingWindow = function (nums, k) {
 
   let queue = [];
   let res = [];
-  let l = 0;
-  let r = 0;
+  let left = 0;
+  let right = 0;
 
   /*
    * The goal is to maintain a decreasing monotonic queue and register
@@ -25,23 +25,23 @@ const maxSlidingWindow = function (nums, k) {
    * 7        [7]             [3, 3, 5, 5, 6, 7]
    */
 
-  while (r < nums.length) {
-    //  Checking if there exists a item in queue that is less than nums[r], If there is than we remove that element from queue.
-    while (nums[r] > queue[queue.length - 1] && queue.length > 0) {
+  while (right < nums.length) {
+    //  Checking if there exists a item in queue that is less than nums[right], If there is than we remove that element from queue.
+    while (nums[right] > queue[queue.length - 1] && queue.length > 0) {
       queue.pop();
     }
-    queue.push(nums[r]);
+    queue.push(nums[right]);
 
-    if (r - l + 1 < k) {
-      r++;
-    } else if (r - l + 1 === k) {
+    if (right - left + 1 < k) {
+      right++;
+    } else if (right - left + 1 === k) {
       //   Adding first element of the queue to result array
       res.push(queue[0]);
-      if (queue[0] === nums[l]) {
+      if (queue[0] === nums[left]) {
         queue.shift();
       }
-      l++;
-      r++;
+      left++;
+      right++;
     }
   }
   return res;

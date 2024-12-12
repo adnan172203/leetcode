@@ -59,5 +59,34 @@ console.log(minWindow(s, t));
 // Here's how it works:
 
 // substring is initially an empty string, or it holds the previously found shortest substring.
+
 // When the window contains all characters from t, the code checks if either substring is empty (meaning it's the first valid substring found) or if the length of the current window (right - left + 1) is smaller than the length of the previously found substring.
+
 // If either of these conditions is true, substring is updated to the current window (substring) from index left to index right + 1.
+
+// Explanation:
+
+// step 1:
+// Expand the window to the right
+
+// while (right < s.length) {
+//   const rightChar = s[right];
+
+//   neededChars[rightChar]--;
+//   if (neededChars[rightChar] === 0) neededLength--;
+
+// step 2:
+// Shrink the window from the left
+
+// while (neededLength === 0) {
+//   if (!substring || substring.length > right - left + 1) {
+//     substring = s.slice(left, right + 1);
+//   }
+
+//   const leftChar = s[left];
+//   if (neededChars[leftChar] === 0) {
+//     neededLength++;
+//   }
+//   neededChars[leftChar]++;
+//   left++;
+// }

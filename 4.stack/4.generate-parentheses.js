@@ -20,7 +20,7 @@ function generateParentheses(n) {
 }
 
 // Example usage:
-console.log(generateParentheses(3)); // Output: ["((()))","(()())","(())()","()(())","()()()"]
-console.log(generateParentheses(1)); // Output: ["()"]
+generateParentheses(3); // Output: ["((()))","(()())","(())()","()(())","()()()"]
+generateParentheses(1); // Output: ["()"]
 
 // https://www.youtube.com/watch?v=WW1rYrR3tTI

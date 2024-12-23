@@ -14,3 +14,5 @@ function findMin(nums) {
 
   return nums[left];
 }
+
+//https://www.youtube.com/watch?v=bkJeA7LnJww
